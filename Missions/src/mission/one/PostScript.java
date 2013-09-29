@@ -53,10 +53,24 @@ public class PostScript {
 	
 	/**
 	 * 
-	 * @post Test si les deux premiers elements de la pile sont egaux
+	 * @post Teste si les deux premiers elements de la stack ne sont pas egaux
+	 */
+	public void ne(Stack s){
+		if(s.size()>2){
+			boolean temp = (double) s.pop()!=(double) s.pop();
+			s.push(temp);
+		}
+	}
+	
+	/**
+	 * 
+	 * @post Teste si les deux premiers elements de la pile sont egaux
 	 */
 	public void eq(Stack s){
-		boolean temp = (double) s.pop()==(double) s.pop();
+		if(s.size()>2){
+			boolean temp = (double) s.pop()==(double) s.pop();
+			s.push(temp);
+		}
 	}
 	
 	/**
@@ -65,10 +79,10 @@ public class PostScript {
 	 */
 	public void exch(Stack s) {
 		if(s.size()>2){
-		double temp1= (double) s.pop();
-		double temp2= (double) s.pop();
-		s.push(temp1);
-		s.push(temp2);
+			double temp1= (double) s.pop();
+			double temp2= (double) s.pop();
+			s.push(temp1);
+			s.push(temp2);
 		}
 	}
 	
