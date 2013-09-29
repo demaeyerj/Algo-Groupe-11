@@ -56,8 +56,8 @@ public class PostScript {
 	 * @post Teste si les deux premiers elements de la stack ne sont pas egaux
 	 */
 	public void ne(Stack s){
-		if(s.size()>2){
-			boolean temp = (double) s.pop()!=(double) s.pop();
+		if(s.size()>=2){
+			boolean temp =s.pop()!=s.pop();
 			s.push(temp);
 		}
 	}
@@ -67,8 +67,8 @@ public class PostScript {
 	 * @post Teste si les deux premiers elements de la pile sont egaux
 	 */
 	public void eq(Stack s){
-		if(s.size()>2){
-			boolean temp = (double) s.pop()==(double) s.pop();
+		if(s.size()>=2){
+			boolean temp =s.pop()==s.pop();
 			s.push(temp);
 		}
 	}
@@ -78,9 +78,9 @@ public class PostScript {
 	 * @post Echange la place des deux elements top de la stack
 	 */
 	public void exch(Stack s) {
-		if(s.size()>2){
-			double temp1= (double) s.pop();
-			double temp2= (double) s.pop();
+		if(s.size()>=2){
+			String temp1=(String) s.pop();
+			String temp2=(String) s.pop();
 			s.push(temp1);
 			s.push(temp2);
 		}
@@ -88,24 +88,27 @@ public class PostScript {
 	
 	/**
 	 * 
-	 * @post push une copie du "top element" de la stock au somment de celle-ci
+	 * @post push une copie du top element
 	 */
 	public void dup(Stack s) {
 		if(s.isEmpty()!=true){
-			double temp= (double) s.peek();
+			String temp= (String) s.peek();
 			s.push(temp);
 		}
 	}
 	
 	/**
-	 * @pre 
-	 * @post retire le "top element" de la stack
+	 * 
+	 * @post pop le top element
 	 */
-	public void pop(Stack s){
+	public String pop(Stack s) {
+		String temp="stackvide";
 		if(s.isEmpty()!=true){
-			s.pop();
+			temp=(String) s.pop();
 		}
+		return temp;
 	}
+	
 	
 	/**
 	 * @pre: argument ligne non null
